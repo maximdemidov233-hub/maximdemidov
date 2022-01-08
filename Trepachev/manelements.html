@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script defer src="/Trepachev/manelement.js"></script>
+</head>
+
+<body>
+
+	<style>
+		.hidden {
+			display: none;
+		}
+
+		td {
+			width: 100px;
+			height: 50px;
+			border: 1px solid gray;
+		}
+
+		th {
+			width: 100px;
+			height: 50px;
+			border: 2px solid gray;
+
+		}
+
+		.container {
+			margin: 50px auto;
+			width: 50%;
+			text-align: center;
+			align-content: center;
+		}
+
+		#table {
+			margin: 0 auto;
+		}
+
+		.selectWrapper {
+			display: flex;
+			justify-content: center;
+		}
+
+		.container4 {
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
+
+	<div class="container">
+		<ol id="elem"></ol>
+		<button id="button">click me</button>
+	</div>
+
+	<div class="container2 container">
+
+		<div class="selectWrapper">
+			<p>Строки
+				<select id="select1">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</p>
+			<p>Столбцы
+				<select id="select2">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			</p>
+
+		</div>
+		<table id="table"></table>
+	</div>
+
+	<div class="container3 container">
+		<p id="elem3">text</p>
+		<input type="submit" id="show" value="show">
+		<!-- <input type="submit" id="hide" value="hide"> -->
+	</div>
+
+	<div class="container4 container">
+		<p>1</p><button>toggle</button>
+		<p>2</p><button>toggle</button>
+		<p>3</p><button>toggle</button>
+
+	</div>
+
+	<script>
+
+
+	</script>
+
+</body>
+
+</html>

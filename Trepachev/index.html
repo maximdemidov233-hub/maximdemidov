@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script defer src="/main.js"></script>
+</head>
+
+<body>
+	<style>
+		.container {
+			margin: 50px auto;
+			text-align: center;
+
+			width: 50%;
+			background-color: rgb(234, 235, 235);
+		}
+
+		.text__output {
+			margin: 50px;
+		}
+
+		#button1 {
+			width: 25%;
+		}
+
+		.colored {
+			color: rgb(128, 0, 0);
+			font-weight: 700;
+		}
+
+		ul {
+			padding: 30px;
+			border: 1px solid red;
+		}
+
+		li {
+			list-style-type: none;
+			margin-bottom: 20px;
+			border: 1px dashed black;
+		}
+
+		#elem5 {
+			margin: 0 auto;
+			padding: 50px;
+			width: 250px;
+			height: 250px;
+			background-color: green;
+			transition: border-radius linear .5s;
+		}
+
+		#elem6 {
+			margin: 0 auto;
+			padding: 50px;
+			transition: border-radius linear .5s;
+			background-color: blue;
+		}
+
+		#elem7 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			font-size: 20px;
+			font-weight: 800;
+			color: orangered;
+			width: 150px;
+			height: 150px;
+			background-color: orange;
+			transition: border-radius linear .5s;
+		}
+
+		.round {
+			border-radius: 50%;
+		}
+
+		.square {
+			border-radius: 0%;
+		}
+	</style>
+
+	<div class="container">
+		<input type="radio" name="elem" value="1" checked>
+		<input type="radio" name="elem" value="2">
+		<input type="radio" name="elem" value="3">
+
+		<p class="text"></p>
+		<button class="button">Click me</button>
+	</div>
+
+	<div class="container">
+		<input id="elem" value="">
+
+		<p id="text"></p>
+
+	</div>
+
+	<div id="container" class="container">
+		<!-- <select id="select">
+            <option>one</option>
+            <option selected>two</option>
+            <option>three</option>
+        </select> -->
+
+		<p id="text1"></p>
+
+	</div>
+
+	<div id="container3" class="container">
+		<button id="elem3">text</button>
+		<p id="text3"></p>
+	</div>
+
+	<div id="container4" class="container">
+		<ul id="elem4">
+			<li>text</li>
+			<li>text</li>
+			<li>text</li>
+			<li>text</li>
+			<li>text</li>
+		</ul>
+	</div>
+
+	<div class="container7 container">
+		<div id="elem5">
+			<div id="elem6">
+				<div id="elem7"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container8 container">
+		<input id="elem8" value="text">
+	</div>
+	<div class="container9 container">
+
+		<input type="button" id="elem9" value="10">
+	</div>
+
+	<script>
+
+		(() => {
+			let radios = document.querySelectorAll('[type=radio]');
+			let text = document.querySelector('.text');
+			let button = document.querySelector('.button');
+
+			button.addEventListener('click', function () {
+				for (let radio of radios) {
+					if (radio.checked == false) {
+						continue;
+					}
+					else {
+						text.innerHTML = radio.value;
+					}
+				}
+			});
+		})();
+
+		(() => {
+			let elem = document.querySelector('#elem');
+			let output = document.querySelector('#text');
+
+			elem.addEventListener('change', () => {
+
+				if (getLength(elem.value)) {
+					elem.style.border = "1px solid red";
+				}
+				else {
+					elem.style.border = "1px solid green";
+				}
+				// output.textContent = elem.value;
+			});
+
+			elem.addEventListener('input', () => {
+
+				if (getLength(elem.value)) {
+					output.textContent = "Осталось ввести" + ' ' + (5 - elem.value.length) + ' ' + 'символов';
+
+					if (elem.value.length == 5) {
+						output.style.color = 'green';
+					}
+					else {
+						output.style.color = 'red';
+					}
+
+				}
+				else {
+					output.textContent = "Вы ввели символов больше на" + ' ' + (elem.value.length - 5) + ' ' + 'символов';
+					output.style.color = 'red';
+				}
+
+			});
+
+			function getLength(str) {
+				if (str.length <= 5) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+		})();
+
+		(() => {
+			let container = document.querySelector('#container');
+			let select = document.createElement('select');
+			select.classList.add('select');
+			container.prepend(select);
+			let date = new Date();
+
+			let output1 = document.querySelector('#text1');
+
+			for (let i = 2020; i <= 2030; i++) {
+				let option = document.createElement('option');
+				option.textContent = i;
+				select.append(option);
+				if (i == date.getFullYear()) {
+					//option.setAttribute('selected', '');
+					option.selected = true;
+				}
+			};
+
+			select.addEventListener('change', function () {
+				output1.textContent = this.value;
+				if (this.value == 2020 || this.value == 2024 || this.value == 2028) {
+					output1.textContent = this.value + "-" + 'високосный год';
+
+				}
+			});
+		})();
+
+		(() => {
+			let elem = document.querySelector('#elem3');
+			elem.addEventListener('click', function (event) {
+				//console.log(event); // увидим объект с событием
+			});
+
+			let container3 = document.querySelector('#container3');
+			let text3 = container3.querySelector('#text3');
+			let text4 = container3.querySelector('#text4');
+
+			// document.addEventListener('mousemove', (event) => {
+			//     text3.textContent = event.clientX + ':' + event.clientY;
+			//     text4.textContent = event.pageX + ':' + event.pageY;
+			// })
+
+			elem.addEventListener('click', func);
+			elem.addEventListener('dblclick', func);
+
+			function func(event) {
+				if (event.type == 'click') {
+					this.style.background = 'red';
+				}
+				if (event.type == 'dblclick') {
+					this.style.background = 'green';
+				}
+			}
+
+		})();
+
+		//Элемент события в объекте Event в JavaScript
+		(() => {
+			let elem = document.querySelector('#elem4');
+			let p = document.querySelector('#text4');
+
+			elem.addEventListener('click', function (event) {
+				if (event.target.tagName == 'LI') {
+					event.target.innerHTML += '!';
+				}
+				else if (event.target == this) {
+					let li = document.createElement('li');
+					li.textContent = 'text';
+					event.target.append(li);
+				};
+
+			})
+		})();
+
+		//Всплытие событий в JavaScript
+		(() => {
+			let elem5 = document.querySelector('#elem5');
+			let elem6 = document.querySelector('#elem6');
+			let elem7 = document.querySelector('#elem7');
+
+			elem5.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+				}
+				else {
+					this.classList = 'round';
+				}
+			}, true);
+			elem6.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+				}
+				else {
+					this.classList = 'round';
+				}
+			}, true);
+			elem7.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+					this.textContent = 'Я квадрат'
+				}
+				else {
+					this.classList = 'round';
+					this.textContent = 'Я круг'
+
+
+				}
+				//fillElement.call(this)
+
+			}, true);
+
+			function fillElement() {
+				this.textContent = 'Я квадрат'
+
+			}
+
+
+		})();
+
+		//Контекст
+		(() => {
+			let elem8 = document.querySelector('#elem8');
+			elem8.addEventListener('blur', parent);
+
+			function parent() {
+				child(this); // что выведет?
+
+				function child(param) {
+					console.log(param.value); // что выведет?
+				}
+				// child();
+			}
+
+		})();
+		//Таймер
+		(() => {
+			let elem5 = document.querySelector('#elem5');
+			let elem6 = document.querySelector('#elem6');
+			let elem7 = document.querySelector('#elem7');
+			let i = 1;
+
+			// setInterval(function () {
+			// 	//elem7.textContent = i++;
+			// 	if (elem7.classList == 'round') {
+			// 		elem7.classList = 'square';
+			// 		elem7.textContent = i++;
+			// 	}
+			// 	else {
+			// 		elem7.classList = 'round';
+			// 	}
+			// }, 1000)
+			// setInterval(function () {
+			// 	//elem6.textContent = i++;
+			// 	if (elem6.classList == 'round') {
+			// 		elem6.classList = 'square';
+			// 	}
+			// 	else {
+			// 		elem6.classList = 'round';
+			// 	}
+			// }, 1500)
+			// setInterval(function () {
+			// 	//elem5.textContent = i++;
+			// 	if (elem5.classList == 'round') {
+			// 		elem5.classList = 'square';
+			// 	}
+			// 	else {
+			// 		elem5.classList = 'round';
+			// 	}
+			// }, 2000)
+
+			// elem5.addEventListener('click', function (event) {
+			// 	if (this.classList == 'round') {
+			// 		this.classList = 'square';
+			// 	}
+			// 	else {
+			// 		this.classList = 'round';
+			// 	}
+			// }, true);
+			// elem6.addEventListener('click', function (event) {
+			// 	if (this.classList == 'round') {
+			// 		this.classList = 'square';
+			// 	}
+			// 	else {
+			// 		this.classList = 'round';
+			// 	}
+			// }, true);
+			// elem7.addEventListener('click', function (event) {
+			// 	if (this.classList == 'round') {
+			// 		this.classList = 'square';
+			// 		fillElement.call(this)
+			// 	}
+			// 	else {
+			// 		this.classList = 'round';
+
+
+			// 	}
+			// 	//fillElement.call(this)
+
+			// }, true);
+
+
+
+		})();
+
+		(() => {
+			let elem9 = document.querySelector('#elem9');
+
+			elem9.addEventListener('click', function () {
+
+				setInterval(function () {
+					elem9.value--;
+				}, 1000);
+			});
+
+		})();
+
+	</script>
+
+</body>
+
+</html>
