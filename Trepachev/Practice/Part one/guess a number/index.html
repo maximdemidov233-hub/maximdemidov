@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<style>
+		p {
+			margin: 0;
+		}
+
+		.container {
+			width: 75%;
+			margin: 25px auto;
+			text-align: center;
+		}
+
+		.header {
+			position: relative;
+			margin-bottom: 20px;
+		}
+
+		.header p {
+			text-align: start;
+		}
+
+		.choice {
+			display: flex;
+			justify-content: center;
+
+			margin-bottom: 20px;
+			margin-top: 10px;
+		}
+
+		.choice__title {
+			margin: 5px 5px 5px;
+		}
+
+		.input {
+			margin-right: 10px;
+		}
+
+		.popup {
+			position: absolute;
+			width: 250px;
+			min-height: 40px;
+			border-radius: 10px;
+			padding: 5px 5px;
+
+			text-align: center;
+
+			background-color: rgb(130, 130, 243);
+		}
+
+		.popup::before {
+			position: absolute;
+			content: '';
+			width: 0;
+			height: 0;
+			top: 38px;
+			right: -8px;
+
+			border-left: 24px solid rgb(130, 130, 243);
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+
+			transform: rotate(45deg);
+		}
+
+		.button {
+			background: blue;
+		}
+
+		.paragraph {
+			margin-top: 10px;
+			text-align: start;
+		}
+
+		.watch {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: -13px;
+			right: 126px;
+			width: 50px;
+			height: 50px;
+			border: 1px solid rgb(77, 77, 77);
+			border-radius: 50%;
+		}
+	</style>
+
+	<div class="container">
+
+	</div>
+	<script type="module">
+		import { guessRandomInt } from './index.js';
+		guessRandomInt();
+	</script>
+</body>
+
+</html>

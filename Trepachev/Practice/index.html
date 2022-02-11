@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<style>
+		.popup {
+			position: relative;
+			margin: 50px auto;
+			width: 300px;
+			height: 50px;
+			background-color: blue;
+			border-radius: 10px;
+		}
+
+		.popup::before {
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			top: 100px;
+			right: 250px;
+			border-left: 24px solid transparent;
+			border-right: 6px solid transparent;
+			border-top: 24px solid blue;
+		}
+	</style>
+
+	<div class="popup">
+
+	</div>
+
+</body>
+
+</html>
