@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<style>
+		.container {
+			width: 75%;
+			margin: 25px auto;
+			text-align: center;
+		}
+
+		.input7 {
+			margin-top: 10px;
+		}
+	</style>
+
+	<div class="container">
+		<input type="text" class="input">
+		<p class="text"></p>
+
+
+
+		<input type="number" class="input2">
+		<input type="number" class="input2">
+		<input type="number" class="input2">
+		<button class="button">Press</button>
+		<p class="text2"></p>
+
+
+
+		<input type="text" class="input3">
+		<p class="text3"></p>
+
+
+
+		<input type="text" class="input4">
+		<p class="text4"></p>
+
+
+
+		<input type="text" class="input5">
+		<input type="text" class="input5">
+		<input type="text" class="input5">
+		<input type="text" class="input5">
+
+
+
+		<input type="text" class="input6">
+
+
+
+		<input type="text" class="input7">
+		<p class="text7"></p>
+
+
+
+		<input type="text" class="input8">
+
+
+
+		<input type="text" class="input10">
+		<p class="text10"></p>
+
+
+
+		<button class="button11">Press</button>
+		<p class="text11">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, reprehenderit fugiat id
+			reiciendis iste modi exercitationem non vitae inventore sed a et ducimus velit eaque officia consequatur
+			doloremque distinctio dolorum!</p>
+		<p class="text11">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, deserunt? Sapiente corporis
+			placeat
+			quidem odit sint? Consectetur maiores, commodi expedita, est at qui odio aliquam fugiat eaque quaerat
+			voluptate
+			officiis.</p>
+		<p class="text11">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet asperiores deleniti,
+			debitis excepturi provident laboriosam minima amet, reprehenderit ullam, iusto fuga rem delectus beatae!
+			Sequi
+			pariatur incidunt praesentium eaque!</p>
+		<p class="text11">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda exercitationem laboriosam
+			provident veniam dolorem numquam itaque repellat eveniet delectus velit quis quaerat repellendus, blanditiis
+			mollitia consequuntur amet nam ratione quo!</p>
+
+
+
+		<a href="http://code.mu/ru/javascript/book/prime/dom/basis/practicum/" class="link">Ссылка 1</a>
+		<a href="http://code.mu/ru/javascript/book/prime/#open-section-menu" class="link">Ссылка 2</a>
+		<a href="" class="link">Ссылка 3</a>
+
+
+
+		<p class="text14">2</p>
+		<p class="text14">3</p>
+		<p class="text14">4</p>
+		<p class="text14">5</p>
+
+
+
+		<input type="text" class="input15">
+		<p class="text15"></p>
+	</div>
+
+
+
+	<script>
+		//Задача 1
+		(() => {
+
+			let input = document.querySelector('.input');
+			let output = document.querySelector('.text');
+
+			input.addEventListener('blur', () => {
+
+				output.textContent = input.value;
+				input.value = '';
+
+			})
+		})();
+
+		//Задача 2
+
+		(() => {
+			let input = document.querySelectorAll('.input2');
+			let output = document.querySelector('.text2');
+			let button = document.querySelector('.button');
+			let sum = 0;
+
+			button.addEventListener('click', () => {
+				for (let elem of input) {
+					sum += Number(elem.value);
+				}
+				output.textContent = sum;
+			})
+		})();
+
+		//Задача 3
+		(() => {
+
+			let input = document.querySelector('.input3');
+			let output = document.querySelector('.text3');
+
+			input.addEventListener('blur', () => {
+				let sum = 0
+				let arr = input.value.split('');
+				arr.forEach(element => {
+					sum += Number(element)
+				});
+
+				output.textContent = sum;
+				input.value = '';
+
+			});
+		})();
+
+		//Задача 4
+		(() => {
+
+			let input = document.querySelector('.input4');
+			let output = document.querySelector('.text4');
+
+			input.addEventListener('blur', () => {
+				let sum = 0
+				let arr = input.value.split(',');
+				let arrFilter = arr.filter(elem => elem != '')
+
+				arrFilter.forEach(element => {
+					sum += Number(element)
+				});
+
+				output.textContent = sum;
+				input.value = '';
+
+			});
+		})();
+
+		//Задача 5
+
+		(() => {
+			let input = document.querySelectorAll('.input5');
+
+			input[0].addEventListener('blur', function () {
+				let arr = this.value.split(' ');
+				for (let i = 1; i < input.length; i++) {
+					input[i].value = arr[i - 1];
+
+				}
+			})
+		})();
+
+		//Задача 6
+
+		(() => {
+			let input = document.querySelector('.input6');
+
+			input.addEventListener('blur', function () {
+				let arr = this.value.split(' ');
+				this.value = '';
+				let arr1 = arr.map(elem => elem.split(''))
+
+				for (let i = 0; i < arr1.length; i++) {
+					arr1[i][0] = arr1[i][0].toUpperCase();
+					arr1[i] = arr1[i].join('');
+					this.value += `${arr1[i]} `;
+				}
+			})
+		})();
+
+		//Задача 7
+
+		(() => {
+			let input = document.querySelector('.input7');
+			let output = document.querySelector('.text7');
+
+			input.addEventListener('blur', function () {
+
+				let arr = this.value.split(' ');
+
+				let arr1 = arr.filter(elem => elem != '');
+
+				output.textContent = `Введено ${arr1.length} слов`;
+			})
+		})();
+
+		//Задача 8
+
+		(() => {
+			let input = document.querySelector('.input8');
+
+			input.addEventListener('blur', function () {
+
+				let str = this.value.split('.').reverse().join('-');
+
+				this.value = str;
+			})
+		})();
+
+
+		//Задача 10
+
+		(() => {
+			let input = document.querySelector('.input10');
+			let output = document.querySelector('.text10');
+
+			input.addEventListener('blur', function () {
+
+				let str = this.value;
+
+				if (str.includes(3)) {
+					output.textContent = 'Число включает в себя цифру 3'
+				} else {
+					output.textContent = 'Цифра 3 не найдена'
+				}
+				input.value = '';
+
+			})
+		})();
+
+		//Задача 11
+
+		(() => {
+			let button = document.querySelector('.button11');
+			let output = document.querySelectorAll('.text11');
+
+			button.addEventListener('click', function () {
+
+				for (let i = 0; i < output.length; i++) {
+					output[i].textContent = output[i].textContent + (i + 1);
+				}
+
+			})
+		})();
+
+		//Задача 13
+
+		(() => {
+			let links = document.querySelectorAll('.link');
+
+			let arrow = "&rarr";
+
+			for (let link of links) {
+
+				if (link.href.includes('http://')) {
+
+					link.innerHTML = link.innerHTML + "&rarr;";;
+				}
+
+			}
+
+		})();
+
+		//Задача 14
+
+		(() => {
+			let p = document.querySelectorAll('.text14');
+
+			for (let elem of p) {
+				elem.addEventListener('click', function () {
+					this.textContent = this.textContent ** 2;
+				})
+			}
+		})();
+
+		//Задача 15
+		(() => {
+
+			let input = document.querySelector('.input15');
+			let arr = ['вс', 'пн', 'ср', 'чт', 'пт', 'сб']
+
+			input.addEventListener('blur', () => {
+
+				let date = input.value.split('.').reverse();
+				let daysOfWeek = new Date(Number(date[0]), date[1] - 1, date[2]);
+
+				for (let day = 0; day < arr.length; day++) {
+					if (daysOfWeek.getDay() != day) {
+						continue;
+					} else {
+						input.value = arr[day];
+					}
+				}
+
+			});
+
+		})();
+
+
+		//Задача 16
+
+		(() => {
+
+			let input = document.createElement('input');
+			let buttonPlus = document.createElement('input');
+			let buttonMinus = document.createElement('input');
+			input.setAttribute('type', 'text');
+			buttonPlus.setAttribute('type', 'submit');
+			buttonMinus.setAttribute('type', 'submit');
+
+			buttonMinus.value = -1;
+			buttonPlus.value = 1;
+
+			document.querySelector('.container').append(input);
+			document.querySelector('.container').append(buttonPlus);
+			document.querySelector('.container').append(buttonMinus);
+
+			let sum = 0;
+
+			buttonPlus.addEventListener('click', () => {
+				sum += Number(buttonPlus.value);
+				input.value = sum;
+			})
+
+			buttonMinus.addEventListener('click', () => {
+				sum += Number(buttonMinus.value);
+
+				if (sum < 0) {
+					return;
+				} else {
+					input.value = sum;
+				}
+
+			})
+
+		})();
+
+		//Задача 17
+
+		(() => {
+			let input = document.createElement('input');
+
+			for (let i = 0; i < 5; i++) {
+				let p = document.createElement('p');
+				p.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+				p.classList.add('text17');
+				document.querySelector('.container').append(p);
+			}
+
+			document.querySelector('.container').append(input);
+
+			let p = document.querySelectorAll('.text17');
+			let sum = 0;
+
+			for (let elem of p) {
+				elem.addEventListener('click', () => {
+					sum++;
+					input.value = sum;
+				})
+			}
+		})();
+
+		//Задача 18
+
+		(() => {
+
+			let container = document.querySelector('.container');
+
+			for (let i = 0; i < 4; i++) {
+				let div = document.createElement('div');
+				div.classList.add('text18');
+				div.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+				container.append(div);
+			}
+
+			let p = document.querySelectorAll('.text18');
+
+			for (let elem of p) {
+				let str = elem.textContent;
+				let newStr = str.slice(0, 10);
+				elem.textContent = newStr + '...';
+
+			}
+
+		})();
+
+		//Задача 19
+
+		(() => {
+
+			let input = document.createElement('input');
+			input.style.margin = '25px';
+
+			document.querySelector('.container').append(input);
+
+			input.addEventListener('blur', function () {
+				if (Number(input.value) > 0 && Number(input.value) <= 100) {
+					input.style.background = 'green';
+				} else {
+					input.style.background = 'red';
+				}
+
+				input.value = '';
+			})
+
+
+
+		})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

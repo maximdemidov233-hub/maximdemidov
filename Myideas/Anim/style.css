@@ -1,0 +1,28 @@
+.block {
+    width: 200px;
+    height: 200px;
+    background-color: navy;
+    animation: anim 3s infinite;
+    transfom-origin: 0 0;
+  }
+  
+   @keyframes anim {
+    0% {
+  /*     width: 200px;
+      height: 200px; */
+      transform: scale(1);
+      
+      
+    }
+  50% {
+  /*     width: 450px;
+      height: 450px; */
+      transform: scale(2.25);
+          
+    }
+    100% {
+  /*     width: 200px;
+      height: 200px; */
+      transform: scale(1);
+    }
+  } 

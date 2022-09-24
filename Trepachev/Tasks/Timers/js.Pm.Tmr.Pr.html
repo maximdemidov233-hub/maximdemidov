@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		//Задача 7
+
+		let p = document.createElement('p');
+		p.textContent = '123456789';
+
+		document.body.append(p);
+
+		setInterval(function () {
+			if (p.style.color == 'red') {
+				p.style.color = 'green';
+
+			} else {
+				p.style.color = 'red';
+
+			}
+
+		}, 1000)
+
+
+
+		//Задача 8
+
+		let div = document.createElement('div');
+		let clock = document.createElement('div');
+
+		clock.textContent = '00 : 00 : 00'
+
+		div.style.borderRadius = '50%';
+		div.style.textAlign = 'center';
+		div.style.paddingTop = '50px';
+		div.style.border = '1px solid grey';
+		div.style.width = '20%';
+		div.style.margin = '20px auto';
+		div.style.height = '100px';
+		div.append(clock);
+
+		document.body.append(div);
+
+		function addCat(num) {
+			if (num >= 0 && num <= 9) {
+				return '0' + num;
+			} else {
+				return num;
+			}
+		}
+
+		setInterval(function () {
+			let date = new Date();
+			clock.textContent = `${addCat(date.getHours())} : ${addCat(date.getMinutes())} : ${addCat(date.getSeconds())}`
+		}, 1000)
+
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

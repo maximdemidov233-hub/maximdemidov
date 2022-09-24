@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+		//Задача 1
+
+		let array = [];
+
+		function func(arr) {
+
+			for (let elem in arr) {
+				if (typeof arr[elem] == 'object') {
+					func(arr[elem]);
+				}
+				else {
+					array.push(arr[elem]);
+				}
+			}
+
+			return array;
+		}
+
+		let obj = { a: 1, b: { c: 2, d: 3, e: 4 }, f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } } };
+
+		console.log(func(obj));
+
+
+		// Задача 2
+		let result = [];
+
+		function func2(arr) {
+			for (let elem of arr) {
+				if (typeof elem == 'object') {
+					func2(elem);
+				}
+				else {
+					result.push(elem);
+				}
+			}
+			return result;
+		}
+
+		let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+
+		console.log(func2(arr));
+
+		//Задача 3
+
+		function func3(arr) {
+			let sum = 0;
+
+			for (let elem in arr) {
+				if (typeof arr[elem] == 'object') {
+					sum += func3(arr[elem]);
+				}
+				else {
+					sum += arr[elem];
+				}
+			}
+			return sum;
+		}
+
+		console.log(func3(obj));
+
+		//Задача 4
+
+		let arr_4 = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
+		let str = '';
+		function func4(arr) {
+
+			for (let elem of arr) {
+
+				if (typeof elem == 'object') {
+					func4(elem);
+				}
+				else {
+					str += elem;
+				}
+			}
+			return str;
+		}
+		console.log(func4(arr_4));
+
+		//Задача 5
+
+		let arr_5 = [1, [2, 7, 8], [3, 4], [5, [6, 7]]];
+		let result_5 = [];
+
+		function func_5(arr) {
+
+			for (let elem of arr) {
+
+				if (typeof elem == 'object') {
+					func_5(elem);
+				}
+				else {
+					result_5.push(elem ** 2);
+				}
+			}
+			return result_5;
+		}
+		console.log(func_5(arr_5));
+
+
+	</script>
+
+</body>
+
+</html>

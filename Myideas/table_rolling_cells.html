@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    td {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border: 1px solid rgb(109, 106, 106);
+      text-align: center;
+    }
+
+    .face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 25px;
+
+      background-color: rgb(154, 165, 209);
+
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      transition: transform 1s linear;
+    }
+
+    .back {
+      position: absolute;
+      background-image: url(/09_const-var-scope/back.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 100%;
+
+      backface-visibility: hidden;
+
+      transform: rotateY(0deg);
+      transition: transform 1s linear;
+    }
+  </style>
+  <script>
+    //Задача 1
+
+    let table = document.createElement('table');
+    document.body.append(table);
+
+    let k = 1;
+
+    for (let i = 0; i < 4; i++) {
+      let tr = document.createElement('tr');
+
+      for (let j = 0; j < 4; j++) {
+        let td = document.createElement('td');
+        let face = document.createElement('div');
+        let back = document.createElement('div');
+
+        face.classList.add('face');
+        back.classList.add('back');
+
+        td.append(face, back);
+        td.append(face);
+
+        face.textContent = k;
+        k++;
+        tr.append(td);
+      }
+
+      table.append(tr);
+    }
+
+    table.addEventListener('click', function (event) {
+
+      let target = event.target.closest('td');
+      let back = target.firstChild;
+      let face = target.lastChild;
+
+      back.style.transform = 'rotateY(180deg)';
+      face.style.transform = 'rotateY(0deg)';
+
+      setTimeout(() => {
+        back.style.transform = 'rotateY(0deg)';
+        face.style.transform = 'rotateY(180deg)';
+      }, 3000)
+
+
+    })
+
+  </script>
+</body>
+
+</html>

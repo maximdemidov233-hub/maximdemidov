@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let emploeesData = (`Иванов Иван  Иванович,  системный администратор
+        Петров Петр Петрович , фронтенд-разработчик
+        `)
+
+        function parseEmploeesData(dataString) {
+            return dataString
+                .split('\n')
+                .filter(line => line.trim().length > 0)
+                .map(line => {
+                    const [fullName, occupation] = line
+                        .split(',')
+                })
+        }
+
+
+        let year = 2017;
+        let now = new Date()
+        let dateStart = new Date(year, 8, 1, 0, 0, 0);
+        let start = dateStart.getFullYear();
+        let finish = new Date(dateStart.getFullYear() + 4, 8, 1, 0, 0, 0);
+
+        let dif = (finish - dateStart) / 1000 / 60 / 60 / 24 / 365;
+
+        if (now > finish) {
+            //console.log(123)
+        } else {
+            //console.log(321)
+        }
+
+        const listOfStudents = [{
+            name: 'Петров Петр Петрович',
+            birthDate: '15.12.2000',
+            faculty: 'АСУ',
+            startTraining: 2018
+        },
+        {
+            name: 'Иванов Иван Иванович',
+            birthDate: '22.05.1999',
+            faculty: 'Дизайн',
+            startTraining: 2019
+        },
+        {
+            name: 'Семенов Сеемен Семенович',
+            birthDate: '01.01.1998',
+            faculty: 'Дизайн',
+            startTraining: 2019
+        },
+        {
+            name: 'Демидов Демид Демидович',
+            birthDate: '01.03.2001',
+            faculty: 'Технологии',
+            startTraining: 2020
+        },
+        {
+            name: 'Сидоров Сидор Сидорович',
+            birthDate: '01.04.2000',
+            faculty: 'Технологии',
+            startTraining: 2021
+        },
+        {
+            name: 'Сорокин Иван Петрович',
+            birthDate: '24.10.1997',
+            faculty: 'АСУ',
+            startTraining: 2018
+        }
+        ];
+        let table = document.createElement('table');
+
+        for (let elem of listOfStudents) {
+            let elemNorm = Object.values(elem);
+            let tr = document.createElement('tr');
+            console.log(elemNorm)
+            for (let cell of elemNorm) {
+                let td = document.createElement('td');
+                td.textContent = cell;
+                tr.append(td);
+            }
+
+            table.append(tr);
+        }
+
+
+
+
+        document.body.append(table)
+
+        console.log(elemNorm)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

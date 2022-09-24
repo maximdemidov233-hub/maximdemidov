@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//Задача 1
+
+		let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+		let table = document.createElement('table');
+
+		for (let arr of array) {
+			let tr = document.createElement('tr');
+			for (let elem of arr) {
+				let td = document.createElement('td');
+				td.textContent = elem;
+				tr.append(td);
+			}
+			table.append(tr);
+		}
+
+		document.body.append(table);
+
+		//Задача 1
+
+		// let array = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+		// let table = document.createElement('table');
+
+		for (let arr of array) {
+			let tr = document.createElement('tr');
+			for (let elem of arr) {
+				let td = document.createElement('td');
+				td.textContent = elem ** 2;
+				tr.append(td);
+			}
+			table.append(tr);
+		}
+
+		document.body.append(table);
+
+
+
+
+	</script>
+</body>
+
+</html>

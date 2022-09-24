@@ -1,0 +1,36 @@
+.spoiler {
+    border: 1px solid black;
+}
+.spoiler a.header {
+    display: block;
+    color: inherit;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    margin: 1px;
+    border: 2px solid black;
+}
+.spoiler .header::before {
+    content: "[+] ";
+    font-family: monospace;
+    vertical-align: top;
+}
+.spoiler .content {
+    max-height: 0px;
+    overflow: hidden;
+}
+.spoiler.shown .header::before {
+    content: "[-] ";
+}
+.spoiler.shown .content {
+    padding: 10px;
+    max-height: 1000px;
+}
+.spoiler.em a.header {
+    color: white;
+    background-color: black;
+}
+.spoiler.em a.header {
+    border: 2px solid white;
+}

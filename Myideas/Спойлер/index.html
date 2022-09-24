@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Веб-компонент Spoiler</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="spoiler.css" rel="stylesheet" />
+
+    <script type="module">
+      import Spoiler from "./spoiler.js";
+      const spoilerItem = document.querySelector(".spoiler__item");
+      const sPl1 = new Spoiler(spoilerItem, {
+        shown: true,
+        background: "#d2d516",
+        color: "#d91212",
+      });
+    </script>
+  </head>
+  <body>
+    <article class="cont">
+      <div id="spl1" class="spoiler__item">
+        <a class="header" href="#">JavaScript</a>
+        <div class="content">
+          <p>
+            Мультипарадигменный язык программирования. Поддерживает
+            объектно-ориентированный, императивный и функциональный стили.
+            Является реализацией стандарта ECMAScript (стандарт ECMA-262).
+          </p>
+          <p>
+            Обычно используется как встраиваемый язык для программного доступа к
+            объектам приложений. Наиболее широкое применение находит в браузерах
+            как язык сценариев для придания интерактивности веб-страницам.
+          </p>
+        </div>
+      </div>
+      <div id="spl2" class="spoiler__item">
+        <a class="header" href="#">TypeScript</a>
+        <div class="content">
+          <p>
+            Язык программирования, представленный Microsoft в 2012 году и
+            позиционируемый как средство разработки веб-приложений, расширяющее
+            возможности JavaScript.
+          </p>
+          <p>
+            Разработчиком языка TypeScript является Андерс Хейлсберг (англ.
+            Anders Hejlsberg), создавший ранее Turbo Pascal, Delphi и C#.
+          </p>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

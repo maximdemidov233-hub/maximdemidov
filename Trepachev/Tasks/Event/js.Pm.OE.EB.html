@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<style>
+		#elem5 {
+			margin: 0 auto;
+			padding: 50px;
+			width: 250px;
+			height: 250px;
+			background-color: green;
+			transition: border-radius linear .5s;
+		}
+
+		#elem6 {
+			margin: 0 auto;
+			padding: 50px;
+			transition: border-radius linear .5s;
+			background-color: blue;
+		}
+
+		#elem7 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			font-size: 20px;
+			font-weight: 800;
+			color: orangered;
+			width: 150px;
+			height: 150px;
+			background-color: orange;
+			transition: border-radius linear .5s;
+		}
+
+		.round {
+			border-radius: 50%;
+		}
+
+		.square {
+			border-radius: 0%;
+		}
+	</style>
+	<script>
+		(() => {
+
+			let elem = document.createElement('div');
+
+			elem.innerHTML = `
+				<div id="elem5">
+						<div id="elem6">
+							<div id="elem7"></div>
+						</div>
+				</div>
+			`;
+
+			document.body.append(elem);
+
+			let elem5 = document.querySelector('#elem5');
+			let elem6 = document.querySelector('#elem6');
+			let elem7 = document.querySelector('#elem7');
+
+			elem5.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+				}
+				else {
+					this.classList = 'round';
+				}
+			}, true);
+
+			elem6.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+				}
+				else {
+					this.classList = 'round';
+				}
+			}, true);
+
+			elem7.addEventListener('click', function (event) {
+				if (this.classList == 'round') {
+					this.classList = 'square';
+					this.textContent = 'Я квадрат'
+				}
+				else {
+					this.classList = 'round';
+					this.textContent = 'Я круг'
+
+
+				}
+
+			}, true);
+
+		})();
+
+	</script>
+</body>
+
+</html>

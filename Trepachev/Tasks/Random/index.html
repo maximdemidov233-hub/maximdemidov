@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		function getArray(num) {
+			let arr = [];
+			for (i = 1; i <= num; i++) {
+				arr.push(i);
+			}
+			return arr;
+		}
+
+		let arr = getArray(5);
+
+		console.log(arr);
+
+		function shuffle(arr) {
+			let result = [];
+
+			while (arr.length > 0) {
+				let random = getRandomInt(0, arr.length - 1);
+				let elem = arr.splice(random, 1)[0];
+				result.push(elem);
+			}
+
+			return result;
+		}
+
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		console.log(shuffle([1, 2, 3, 4, 5]));
+
+		arr = [1, 2, 3, 4, 5];
+
+		let random = getRandomInt(0, arr.length - 1);
+		let elems = arr.splice(random, 1);
+		let elem = elems[0];
+
+		console.log(elem);
+	</script>
+</body>
+
+</html>

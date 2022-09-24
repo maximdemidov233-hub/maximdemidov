@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<style>
+		table {
+			margin: 10px auto;
+		}
+
+		.button {
+			width: 250px;
+			height: 40px;
+			margin-left: 483px;
+			background: chartreuse;
+			font-size: 18px;
+		}
+
+		td {
+			background-color: chartreuse;
+		}
+
+		th {
+			background-color: rgb(42, 85, 72);
+			color: cornsilk;
+		}
+
+		td,
+		th {
+			min-width: 50px;
+			height: 50px;
+			border: 1px solid brown;
+			text-align: center;
+		}
+
+		tfoot td {
+			background: rgb(84, 84, 228);
+		}
+	</style>
+	<script>
+
+		//Задача 9
+		let employees = [
+			{ name: 'employee1', age: 30, salary: 400 },
+			{ name: 'employee2', age: 31, salary: 500 },
+			{ name: 'employee3', age: 32, salary: 600 },
+		];
+
+
+		let table = document.createElement('table');
+		let head = document.createElement('thead');
+		let input;
+		head.innerHTML = `
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Salary</th>
+			</tr>
+		`;
+		table.append(head);
+
+		for (let employee of employees) {
+			let tr = document.createElement('tr');
+
+			for (let elem in employee) {
+				let td = document.createElement('td');
+				td.textContent = employee[elem];
+				tr.append(td);
+			}
+			table.append(tr);
+		}
+
+		document.body.append(table);
+
+		let footer = document.createElement('tfoot');
+		let tr = document.createElement('tr');
+		footer.append(tr);
+
+		for (let i = 0; i < 3; i++) {
+			let td = document.createElement('td');
+			let input = document.createElement('input');
+			td.append(input);
+			tr.append(td);
+		}
+
+		table.append(footer);
+
+		let button = document.createElement('input');
+		button.setAttribute('type', 'submit');
+		button.setAttribute('value', 'Add employee');
+		button.classList.add('button')
+		document.body.append(button);
+
+
+		let inputs = footer.querySelectorAll('input');
+
+		button.addEventListener('click', function (event) {
+			let tr = document.createElement('tr');
+			for (let input of inputs) {
+				if (!input.value) {
+					return;
+				}
+				let td = document.createElement('td');
+				td.textContent = input.value;
+				tr.append(td);
+			}
+
+			table.append(tr);
+		})
+
+		table.addEventListener('click', function func(event) {
+			let target = event.target.closest('td');
+			let input = document.createElement('input');
+			input.value = target.textContent;
+			target.textContent = '';
+			target.append(input);
+			input.focus();
+
+			input.addEventListener('blur', function () {
+				if (target.parentNode.parentNode == footer) {
+					table.addEventListener('click', func);
+					return;
+				} else {
+					target.textContent = input.value;
+					table.addEventListener('click', func);
+				}
+
+			});
+
+			table.removeEventListener('click', func);
+
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>

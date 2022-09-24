@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		//Задача 1
+
+		let elem = document.createElement('button');
+		elem.textContent = 'text';
+		document.body.append(elem);
+
+		elem.addEventListener('click', func);
+		elem.addEventListener('dblclick', func);
+
+		function func(event) {
+			if (event.type === 'click') {
+				elem.style.background = 'green';
+			}
+			else if (event.type === 'dblclick') {
+				elem.style.background = 'red';
+			}
+		}
+	</script>
+</body>
+
+</html>

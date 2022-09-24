@@ -1,0 +1,40 @@
+#container,
+#scrollbar,
+#scrollbar div {
+position: absolute;
+box-sizing: border-box;
+}
+#container {
+left: 10px;
+top: 70px;
+width: 400px;
+height: 300px;
+padding: 5px;
+/* overflow: hidden; */
+overflow-y: auto;
+}
+
+#container::-webkit-scrollbar {
+    width: 0;
+}
+
+#scrollbar {
+left: 420px;
+top: 70px;
+width: 20px;
+height: 300px;
+border: thin solid black;
+border-radius: 10px;
+
+}
+#scrollbar div {
+left: 0px;
+top: 0px;
+width: 18px;
+height: 38px;
+background-color: grey;
+border-radius: 10px;
+cursor: pointer;
+
+}
+

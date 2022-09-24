@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+.cont {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.cont > * {
+    width: 40%;
+}

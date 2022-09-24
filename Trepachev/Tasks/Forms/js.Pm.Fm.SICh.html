@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//Задача 1
+
+		let monthes = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
+		let date = new Date();
+		let month = date.getMonth();
+
+		let select = document.createElement('select');
+		document.body.append(select);
+
+		for (let i = 0; i < monthes.length; i++) {
+			let option = document.createElement('option');
+			option.setAttribute('value', `${i}`)
+			option.textContent = monthes[i];
+			select.append(option);
+
+			if (option.value == month) {
+				option.selected = true;
+				console.log(select.selectedIndex)
+			}
+		}
+
+
+
+	</script>
+</body>
+
+</html>

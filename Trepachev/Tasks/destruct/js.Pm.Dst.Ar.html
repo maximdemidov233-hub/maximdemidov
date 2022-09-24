@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// Задача 1
+
+		let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+		let [name, surname, division, proffesion, salary] = arr;
+
+		console.log(name, surname, division, proffesion, salary);
+
+		//Задача 2
+
+		function func() {
+			return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+		}
+
+		[name, surname, division, proffesion, salary] = func();
+
+		console.log(name, surname, division, proffesion, salary);
+
+		//Задача 3
+
+		[, , division, proffesion,] = arr;
+
+		console.log(division, proffesion);
+
+		//Задача 4
+
+		[name, surname, ...rest] = arr;
+
+		console.log(rest);
+
+
+		//Задача 5
+
+		arr = ['Иван', 'Иванов', 'отдел разработки', 'программист'];
+		[name, surname, division, proffesion = 'джуниор'] = arr;
+
+		console.log(name, surname, division, proffesion)
+
+		arr = ['Иван', 'Иванов', 'отдел разработки'];
+		[name, surname, division, proffesion = 'джуниор'] = arr;
+
+		console.log(name, surname, division, proffesion);
+
+		//Задача 6
+
+		let arrs = [2025, 12,];
+
+		function func1() {
+			return (new Date).getDate();
+		}
+		arrs = [2025, 12,];
+		let [year = (new Date).getFullYear(), month = (new Date).getMonth(), day = func1()] = arrs;
+
+		console.log(year, month, day);
+
+		arrs = [, 12, 1];
+		[year = (new Date).getFullYear(), month = (new Date).getMonth(), day = func1()] = arrs;
+
+		console.log(year, month, day);
+
+		arrs = [2025, , 1];
+		[year = (new Date).getFullYear(), month = ((new Date).getMonth() + 1), day = func1()] = arrs;
+
+		console.log(year, month, day);
+
+	</script>
+</body>
+
+</html>

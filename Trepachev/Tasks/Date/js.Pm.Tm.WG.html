@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//Задача 1
+		let date = new Date();
+		console.log(date.getDay());
+
+		//Задача 2
+
+		if (date.getDay() == 0 || date.getDay() == 6) {
+			console.log('Сегодня выходной!!!')
+		} else {
+			console.log('Надо идти на работу')
+		}
+
+		//Задача 3
+
+		function getDaysToSunday(date) {
+
+			let nom = '';
+			let remains = 7 - date.getDay();
+
+			if (remains == 1) {
+				nom = 'день';
+			} else if (remains > 1 && (remains <= 4)) {
+				nom = 'дня';
+
+			} else {
+				nom = 'дней'
+			}
+			console.log(nom)
+			return `До воскресенья осталось - ${remains} ${nom}`;
+
+
+		}
+
+		console.log(getDaysToSunday(new Date()));
+
+	</script>
+</body>
+
+</html>

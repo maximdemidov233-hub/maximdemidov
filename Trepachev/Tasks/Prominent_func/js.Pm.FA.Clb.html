@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+		function each(arr, callback) {
+			let result = [];
+
+			for (let elem of arr) {
+				result.push(callback(elem));
+			}
+
+			console.log(result);
+			return result;
+		}
+
+		//Задача 1
+
+		let array = [1, 2, 3, 4];
+
+		each(array, function (elem) {
+			return elem * elem;
+		});
+
+		//Задача 2
+
+		array = ['лес', 'пес', 'елка'];
+
+		each(array, function (elem) {
+			return elem.split('').reverse().join('');
+
+		});
+
+		//Задача 3
+
+		each(array, function (elem) {
+
+			let splitElem = elem.split('');
+
+			splitElem[0] = splitElem[0][0].toUpperCase();
+
+			return splitElem.join('');
+
+		});
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>

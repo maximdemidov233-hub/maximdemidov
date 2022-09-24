@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<style>
+		.container {
+			margin: 25px auto;
+			width: 75%;
+			text-align: center;
+		}
+	</style>
+
+	<div class="container">
+
+	</div>
+
+	<script>
+		//Задача 1
+
+		(() => {
+			let container = document.querySelector('.container');
+			let input = document.createElement('input');
+			let button = document.createElement('button');
+			button.textContent = 'Click'
+
+			container.append(input);
+			container.append(button);
+
+			button.addEventListener('click', () => {
+				input.disabled = true;
+			});
+
+		})();
+
+		//Задача 2
+
+		(() => {
+			let container = document.querySelector('.container');
+			let input = document.createElement('input');
+			let buttonBlock = document.createElement('button');
+			let buttonUnblock = document.createElement('button');
+
+			buttonBlock.textContent = 'Block';
+			buttonUnblock.textContent = 'Unblock'
+
+			container.append(input);
+			container.append(buttonBlock);
+			container.append(buttonUnblock);
+
+			buttonBlock.addEventListener('click', () => {
+				input.disabled = true;
+			});
+
+			buttonUnblock.addEventListener('click', () => {
+				input.disabled = false;
+			});
+
+		})();
+
+
+	</script>
+</body>
+
+</html>

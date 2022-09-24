@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//Задача 1
+
+		function addZero(num) {
+			if (num >= 0 && num <= 9) {
+				return '0' + num;
+			} else {
+				return num;
+			}
+		}
+		let date = new Date();
+
+		let arr = [date.getHours(), date.getMinutes(), date.getSeconds(), date.getFullYear(), date.getMonth(), date.getDay()];
+		let [hours, minutes, seconds, year, month, day] = arr;
+
+		function getCurrentDate(arr) {
+			let currentDate = `${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)} ${addZero(day)}.${addZero(month + 1)}.${year}`;
+			return currentDate;
+		}
+
+		console.log(getCurrentDate(...arr));
+
+		//Задача 2
+		let currentDate = '2022-01-29';
+
+		console.log(currentDate.split('-').reverse().join('.'));
+
+
+	</script>
+</body>
+
+</html>

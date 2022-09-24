@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//Задача 2
+		let button = document.createElement('button');
+		button.textContent = 'Press';
+		document.body.append(button);
+		let num = 100;
+
+		button.addEventListener('click', function func() {
+
+			setInterval(() => console.log(num--), 1000);
+
+			button.removeEventListener('click', func);
+		})
+
+	</script>
+</body>
+
+</html>

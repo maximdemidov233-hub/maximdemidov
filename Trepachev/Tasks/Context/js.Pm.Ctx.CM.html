@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		//Задача 1
+
+		(() => {
+			for (let i = 0; i < 3; i++) {
+				let input = document.createElement('input');
+				input.setAttribute('value', `text${1 + i}`);
+				document.body.append(input);
+			}
+
+			let input1 = document.querySelector('[value = text1]');
+			let input2 = document.querySelector('[value = text2]');
+			let input3 = document.querySelector('[value = text3]');
+
+			function func() {
+				console.log(this.value);
+			}
+
+			func.call(input1);
+			func.call(input2);
+			func.call(input3);
+
+		})();
+
+
+
+
+		//Задача 2
+
+		(() => {
+
+			let input = document.createElement('input');
+			input.setAttribute('value', 'Привет');
+			document.body.append(input);
+
+			function func(surname, name) {
+				console.log(this.value + ', ' + surname + ' ' + name);
+			}
+
+			func.call(input, 'Иванов', 'Иван');
+
+		})();
+
+
+	</script>
+</body>
+
+</html>

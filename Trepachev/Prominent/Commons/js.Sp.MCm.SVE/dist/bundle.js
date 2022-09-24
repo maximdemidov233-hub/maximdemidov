@@ -1,0 +1,1 @@
+(()=>{var e={169:e=>{e.exports=[1,2,3,4,5]}},r={};function o(t){var s=r[t];if(void 0!==s)return s.exports;var l=r[t]={exports:{}};return e[t](l,l.exports,o),l.exports}(()=>{let e=o(169),r=0;for(elem of e)r+=elem;console.log(r)})()})();

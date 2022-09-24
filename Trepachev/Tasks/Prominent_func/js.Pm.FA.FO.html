@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<script>
+		//Задача 1
+
+		let obj = {
+			func1: function () { return 1; },
+			func2: function () { return 2; },
+			func3: function () { return 3; },
+		};
+
+		alert(obj.func1() + obj.func2() + obj.func3())
+
+		//Задача 2
+
+		function getElem() {
+			for (let elem in obj) {
+				alert(obj[elem]());
+			}
+		}
+		getElem();
+
+		//Задача 3
+
+		let array = [1, 2, 3];
+
+		let obj1 = {
+			sums: function (arr) {
+				let sum = 0;
+				for (let item of arr) {
+					sum += item;
+				}
+
+				return sum;
+			},
+			square: function (arr) {
+				let sum = 0;
+				for (let item of arr) {
+					sum += item * item;
+				}
+				return sum;
+			},
+
+			cube: function (arr) {
+				let sum = 0;
+				for (let item of arr) {
+					sum += item * item * item;
+				}
+				return sum;
+			},
+		}
+
+		alert(obj1.sums(array));
+		alert(obj1.square(array));
+		alert(obj1.cube(array));
+
+	</script>
+
+</body>
+
+</html>

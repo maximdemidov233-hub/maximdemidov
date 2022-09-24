@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="go()">Show circle</button>
+    <style>
+        .circle {
+            transition-property: width, height;
+            transition-duration: 2s;
+            position: fixed;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .message-ball {
+            font-size: 20px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function go() {
+            showCircle(150, 150, 100).then(circle => {
+                circle.classList.add('message-ball');
+                circle.append('Всем, привет!!!');
+            })
+        }
+
+        function showCircle(x, y, radius) {
+            let circle = document.createElement('div');
+            circle.style.width = 0;
+            circle.style.height = 0;
+            circle.style.left = x + 'px';
+            circle.style.top = y + 'px';
+            circle.classList.add('circle');
+            document.body.append(circle);
+
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    circle.style.width = radius * 2 + 'px';
+                    circle.style.height = radius * 2 + 'px';
+                })
+
+                circle.addEventListener('transitionend', function handler() {
+                    circle.removeEventListener('transitionend', handler);
+                    resolve(circle);
+
+                }, 0);
+            });
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
