@@ -1,0 +1,25 @@
+{
+  "todos": [
+    {
+      "name": "5",
+      "done": false,
+      "id": 38
+    }
+  ],
+  "users": [
+    {
+      "name": "Максим Демидов",
+      "userName": "mdemidovmaxim",
+      "division": "Finance",
+      "post": "Начальник отдела",
+      "id": 2
+    },
+    {
+      "name": "Вильгельм  Тель",
+      "userName": "vildhelm",
+      "division": "Production",
+      "post": "Начальник отдела",
+      "id": 3
+    }
+  ]
+}

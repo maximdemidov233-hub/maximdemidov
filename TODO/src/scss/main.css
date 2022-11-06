@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+    border: 1px solid rgb(161, 154, 154);
+    border-radius: 5px!important;
+    padding: 5px;
+}
+
+#action {
+    /* display: block; */
+    margin-bottom: 25px;
+}
+
+nav {
+    margin-bottom: 25px;
+}
+
+.header {
+    width: 100%;
+    height: 65px;
+    padding: 20px 0 20px 0;
+    background-color: #0d6efd;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.modal {
+    background-color: rgb(180, 178, 178);
+    
+}
+
+.modal-dialog {
+    max-width: 55%;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+}
+
+.form-select {
+    background-color: #0d6efd;
+    color: #fff;
+    height: 41px;
+}
