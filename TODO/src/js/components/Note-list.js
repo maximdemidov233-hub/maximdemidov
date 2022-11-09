@@ -12,6 +12,8 @@ export class NoteList {
         this.container.append(this.list);
         this.checkEmpty();
         this.key = key;
+
+        //document.addEventListener('DOMContentLoaded', this.initList());
     }
 
     async initList() {

@@ -1,5 +1,8 @@
+import '../index.html';
+import '../scss/main.scss';
+
 import { Todo } from './components/Todo-app.js';
 
 let app = new Todo(document.getElementById('app'));
 
-app.initPage();
+document.addEventListener("DOMContentLoaded", app.initPage());

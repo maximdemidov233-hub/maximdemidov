@@ -41,9 +41,11 @@ export class Todo {
       }
     })
 
+    // this._notes = new NoteList(this.list);
+    // this.title.textContent = this._notes.key;
+
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
-      console.log("111")
       if (!this.input.value) {
         return;
       }
@@ -52,6 +54,8 @@ export class Todo {
       this.input.value = '';
     })
     this.addUser();
+    //document.addEventListener('DOMContentLoaded', this.initPage())
+
   }
 
   async initPage() {
@@ -64,13 +68,10 @@ export class Todo {
   async getListUsers() {
     const usersList = await this.getUsers();
     console.log(usersList);
-    this.select = document.createElement('select');
-    this.select.classList.add('form-select');
-    const optionSelected = document.createElement('option');
+    this.select = document.querySelector('.form-select');
+    //const optionSelected = document.createElement('option');
     // optionSelected.setAttribute('selected', true);
     // optionSelected.setAttribute('disabled', true);
-    optionSelected.textContent = 'Выберите пользователя';
-    this.select.append(optionSelected);
     usersList.forEach(item => {
       const option = document.createElement('option');
       option.value = item.userName;
