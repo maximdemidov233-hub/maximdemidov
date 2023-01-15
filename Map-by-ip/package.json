@@ -1,0 +1,26 @@
+{
+  "name": "map-by-ip",
+  "version": "1.0.0",
+  "description": "'IP address tracer'",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build --out-dir=build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "maximdemidov233-hub"
+  },
+  "keywords": [
+    "js",
+    "ip"
+  ],
+  "author": "maximdemidov",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.2"
+  }
+}

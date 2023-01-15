@@ -1,0 +1,191 @@
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 0px auto;
+
+  .card-bounding {
+
+    margin: 15px;
+    position: relative;
+    top: 50%;
+    //transform: translateY(-50%);
+    padding: 30px;
+    border: 1px solid #3e73ea;
+    border-radius: 6px;
+    font-family: 'Roboto';
+    background: #d9e2f7;
+
+    aside {
+      font-size: 18px;
+      padding-bottom: 8px;
+    }
+
+    .card-container {
+      width: 100%;
+      // padding-left: 80px;
+      // padding-right: 40px;
+      position: relative;
+      box-sizing: border-box;
+      margin: 0 auto 30px auto;
+
+      // aside {
+      //   font-size: 18px;
+      //   padding-bottom: 8px;
+      // }
+
+      .card-type {
+        width: 76px;
+        height: 46px;
+        // background: url("images/cards.png");
+        // background-position: 0 -291px;
+        // background-repeat: no-repeat;
+        //border: 1px solid #c2313c;
+        position: absolute;
+        top: 33px;
+        left: 8px;
+      }
+
+      input {
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 22px;
+        padding: 15px 15px 15px 94px;
+        border: 0;
+        border-radius: 5px;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .card__number {
+        border: 1px solid #ccc;
+
+
+
+        .card-valid {
+          position: absolute;
+          top: 26px;
+          right: 15px;
+          line-height: 60px;
+          font-size: 40px;
+          font-family: 'icons';
+          color: #ccc;
+
+          .active {
+            color: #42ca7c;
+          }
+        }
+
+      }
+    }
+
+    .card-details {
+      display: flex;
+      justify-content: space-between;
+      //width: 50%;
+
+      input {
+        font-size: 22px;
+        padding: 15px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 0;
+        width: 100%;
+        outline: none;
+      }
+
+      .expiration {
+        width: 25%;
+        // float: left;
+        // padding-right: 5%;
+
+        // input {
+        //   font-size: 22px;
+        //   padding: 15px;
+        //   box-sizing: border-box;
+        //   border-radius: 5px;
+        //   width: 100%;
+        // }
+
+        // aside {
+        //   font-size: 18px;
+        //   padding-bottom: 8px;
+        // }
+
+      }
+      .cvv {
+        width: 20%;
+        //float: left;
+
+        // input {
+        //   font-size: 22px;
+        //   padding: 15px;
+        //   box-sizing: border-box;
+        //   border-radius: 5px;
+        //   width: 100%;
+        // }
+        // aside {
+        //   font-size: 18px;
+        //   padding-bottom: 8px;
+        // }
+      }
+
+      .email {
+        width: 50%;
+
+        // input {
+        //   font-size: 22px;
+        //   padding: 15px;
+        //   box-sizing: border-box;
+        //   border-radius: 5px;
+        //   width: 100%;
+        // }
+
+        // aside {
+        //   font-size: 18px;
+        //   padding-bottom: 8px;
+        // }
+      }
+    }
+  }
+
+  button {
+    height: 100%;
+    margin:  0 15px;
+    font-size: 22px;
+    padding: 15px 44px;
+    border-radius: 5px;
+    background-color: #d9e2f7;;
+    cursor: pointer;
+
+  }
+
+
+  // .card-type.mastercard { background-position: 0 0; }
+  // .card-type.visa { background-position: 0 -115px; }
+  // .card-type.amex { background-position: 0 -57px; }
+  // .card-type.discover { background-position: 0 -174px; }
+  // .card-valid {
+  //   position: absolute;
+  //   top: 0;
+  //   right: 15px;
+  //   line-height: 60px;
+  //   font-size: 40px;
+  //   font-family: 'icons';
+  //   color: #ccc;
+  // }
+  // .card-valid.active { color: #42ca7c; }
+  // .card-details {
+  //   width: 100%;
+  //   text-align: left;
+  //   margin-bottom: 30px;
+  //   transition: 300ms ease;
+  // }
+
+  // .card-details input.error {
+  //   border: 1px solid #c2313c;
+  //   box-shadow: 0 4px 8px 0 rgba(238,76,87,0.3);
+  //   outline: none;
+  // }
+  // .card-details
+}
+
