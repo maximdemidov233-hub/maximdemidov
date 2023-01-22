@@ -5,7 +5,6 @@ export class Option {
     }
 
     select() {
-        console.log(this.id);
        return this.id;
     }
 

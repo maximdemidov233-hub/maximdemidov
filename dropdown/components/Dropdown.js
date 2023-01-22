@@ -4,7 +4,6 @@ import { OptionsList } from './OptionsList.js';
 
 export class Dropdown {
     constructor($root, items) {
-        // super($root, items);
         this.items = items;
         this.$el = $root;       
     }
@@ -36,7 +35,9 @@ export class Dropdown {
                 this.select.close();
             };
         } else if (e.target.closest('ul')) {
-            this.select.$select.textContent = e.target.textContent;
+            const optionElem = this.optionsList.list.filter(i => i.id === e.target.dataset.id)[0];
+            let item = this.items.filter(i => i.id === optionElem.select());            
+            this.select.$select.textContent = item[0].label;
             this.select.close();
         } else {
             return;
